@@ -1,15 +1,13 @@
-/* --- 1. GLOBAL SETTINGS & FONTS --- */
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif; /* Clean text for reading */
-    color: #4a4a4a;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     overflow-x: hidden;
-    
-    /* Animated Gradient Background */
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #ffd1ff, #a18cd1);
+    color: #4a4a4a;
+
+    background: linear-gradient(-45deg, #ff4e50, #ff6a88, #ff99ac, #f9d423);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    animation: gradientBG 12s ease infinite;
 }
 
 @keyframes gradientBG {
@@ -18,232 +16,139 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Stylish Headings (Handwritten feel) */
 h1, h2 {
-    font-family: 'Dancing Script', cursive; /* Cursive font */
+    font-family: 'Dancing Script', cursive;
     color: #d81b60;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-/* --- 2. FLOATING HEARTS BACKGROUND --- */
-.floating-hearts {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    pointer-events: none;
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
 }
 
-.floating-hearts span {
-    position: absolute;
-    display: block;
-    width: 20px;
-    height: 20px;
-    bottom: -150px;
-    animation: floatUp 20s linear infinite;
-    opacity: 0.4;
-    font-size: 24px;
-    text-shadow: 0 0 5px rgba(255, 192, 203, 0.8);
+.hidden-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
-.floating-hearts span:nth-child(odd) { animation-duration: 12s; }
-.floating-hearts span:nth-child(even) { animation-duration: 18s; }
-/* Positioning handled in HTML/JS or manually like before */
-.floating-hearts span:nth-child(1){ left: 10%; animation-delay: 0s; }
-.floating-hearts span:nth-child(2){ left: 30%; animation-delay: 4s; }
-.floating-hearts span:nth-child(3){ left: 70%; animation-delay: 2s; }
-.floating-hearts span:nth-child(4){ left: 50%; animation-delay: 6s; }
-
-@keyframes floatUp {
-    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    20% { opacity: 0.6; }
-    80% { opacity: 0.6; }
-    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
-}
-
-/* --- 3. LANDING SCREEN --- */
+/* Landing */
 .landing-screen {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    /* Glass Effect Overlay */
     background: rgba(255, 236, 242, 0.95);
-    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     z-index: 1000;
-    transition: opacity 0.8s ease;
-}
-
-.landing-screen h1 {
-    font-size: 3.5rem; /* Bada font */
-    margin-bottom: 5px;
-    background: linear-gradient(to right, #d81b60, #ff4081);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .enter-btn {
-    background: linear-gradient(45deg, #ff6b6b, #ff4757);
-    color: white;
-    padding: 15px 45px;
+    padding: 15px 40px;
     border: none;
     border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    background: linear-gradient(45deg, #ff1744, #ff6f91);
+    color: white;
+    font-size: 1.1rem;
     cursor: pointer;
-    margin-top: 25px;
-    box-shadow: 0 10px 25px rgba(255, 71, 87, 0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation: pulseBtn 2s infinite;
+    margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(255,0,80,0.4);
 }
 
-.enter-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(255, 71, 87, 0.6);
-}
-
-@keyframes pulseBtn {
-    0% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(255, 71, 87, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 71, 87, 0); }
-}
-
-/* --- 4. MAIN LAYOUT --- */
-.hidden-content { display: none; opacity: 0; transition: opacity 1s ease; }
-.container { max-width: 500px; margin: 0 auto; padding: 20px 15px 80px 15px; }
-
-/* Hero Image */
+/* Hero */
 .main-photo {
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* Deep shadow */
-    border: 5px solid white; /* Photo frame effect */
     margin-top: 15px;
-    animation: floatImg 6s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(255, 0, 80, 0.5);
 }
 
-@keyframes floatImg {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+/* Memory Cards */
+.memory-card {
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 8px 25px rgba(255,0,80,0.2);
+    transition: 0.4s;
 }
 
-/* --- 5. MODERN GLASS CARDS --- */
-/* --- NEW CODE (Jo paste karna hai) --- */
-/* --- FORCE FULL IMAGE FIX --- */
+.memory-card:hover {
+    transform: translateY(-6px);
+}
+
 .memory-card img {
-    width: 100% !important;        /* Width puri rahegi */
-    height: auto !important;       /* Height photo ke hisab se adjust hogi */
-    max-height: none !important;   /* Koi height limit nahi hogi */
-    object-fit: unset !important;  /* Cropping band karega */
-    
+    width: 100%;
     border-radius: 15px;
     margin-top: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-
-/* Card Reveal Animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
-}
-.reveal.active { opacity: 1; transform: translateY(0) scale(1); }
-
 
 .date {
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    font-size: 0.9rem;
+    font-weight: bold;
     color: #fff;
+    background: #ff6f91;
     padding: 5px 15px;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 10px rgba(255, 154, 158, 0.4);
-    align-self: flex-start;
-    margin-bottom: 12px;
 }
 
 .shayari {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-style: normal; /* Shayari ab clean modern font me hogi */
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-left: 3px solid #ff6b6b;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 0 10px 10px 0;
+    font-style: italic;
+    margin-top: 10px;
+    color: #b3003b;
 }
 
-.memory-card img {
-    width: 100%;
-    height: 260px;
-    max-height: 45vh;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.5s ease;
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
 }
 
-/* Photo ko touch karne par zoom effect */
-.memory-card:active img { transform: scale(1.02); }
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-/* --- 6. SURPRISE BUTTON --- */
+/* Surprise */
 #loveBtn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
     background: linear-gradient(45deg, #FF512F, #DD2476);
     color: white;
-    border: none;
-    padding: 16px 30px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
+    font-size: 1rem;
     margin-top: 30px;
-    width: 100%;
-    box-shadow: 0 10px 20px rgba(221, 36, 118, 0.3);
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
+    cursor: pointer;
 }
-
-/* Button Shine Effect */
-#loveBtn::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    transition: 0.5s;
-}
-#loveBtn:hover::after { left: 100%; }
 
 .hidden {
     display: none;
-    margin-top: 20px;
-    padding: 20px;
     background: white;
+    padding: 20px;
+    margin-top: 20px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    animation: fadeInUp 0.8s forwards;
 }
 
-footer p { color: #fff; font-size: 0.8rem; margin-top: 40px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+/* Floating Hearts */
+.floating-hearts span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatUp 15s linear infinite;
+}
 
-/* Animation Utility */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.floating-hearts span:nth-child(1){ left: 10%; animation-delay: 0s; }
+.floating-hearts span:nth-child(2){ left: 30%; animation-delay: 4s; }
+.floating-hearts span:nth-child(3){ left: 60%; animation-delay: 2s; }
+.floating-hearts span:nth-child(4){ left: 80%; animation-delay: 6s; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 0.7; }
+    100% { transform: translateY(-110vh); opacity: 0; }
 }

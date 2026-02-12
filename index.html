@@ -1,87 +1,113 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Happy Valentine My Love ❤️</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy 6 Months My Love ❤️</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <audio id="bgMusic" loop>
-        <source src="song.mp3" type="audio/mp3"> 
-    </audio>
+<!-- Floating Hearts / Roses -->
+<div class="floating-hearts">
+    <span>❤️</span>
+    <span>🌹</span>
+    <span>💖</span>
+    <span>💕</span>
+</div>
 
-    <div class="landing-screen" id="landingScreen">
-        <h1>Hey Lilly! ❤️</h1>
-        <p>Tumhare liye ek chhota sa surprise hai...</p>
-        <button class="enter-btn" onclick="startJourney()">Open Surprise 🎁</button>
-        <p class="hint">(Please turn up your volume 🔊)</p>
-    </div>
+<audio id="bgMusic" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
 
-    <div class="container hidden-content" id="mainContent">
-        
-        <header class="hero">
-            <h1>Happy 6 Months! 🌹</h1>
-            <p>Pyaar, hansi aur hamare saath ke 6 mahine.</p>
-            <img src="./image.png" alt="Us" class="main-photo">
-        </header>
+<!-- Landing Screen -->
+<div class="landing-screen" id="landingScreen">
+    <h1>Hey My Valentine ❤️</h1>
+    <p>I made something special just for you...</p>
+    <button class="enter-btn" onclick="startJourney()">Open My Heart 💌</button>
+</div>
 
-        <section class="timeline">
-            <h2>Humara Safar ❤️</h2>
-            
-            <div class="memory-card">
-                <span class="date">Pehli Mulaqat</span>
-                <div class="content">
-                    <p class="shayari">
-                        "6 महीने हुए, पर लगता है कल की ही बात हो,
-                         तुम साथ हो तो हर मुश्किल भी आसान-सी बात हो।
-                         हर दिन तुम्हारी आदत-सी बन गई है,
-                         सच कहूँ तो मेरी हर खुशी की वजह तुम हो। ❤️"
-                    </p>
-                </div>
-                <img src="./image1.png" alt="Month 1">
-            </div>
+<!-- Main Content -->
+<div class="container hidden-content" id="mainContent">
 
-            <div class="memory-card">
-                <span class="date">Sabse Pyaari Yaadein</span>
-                <div class="content">
-                    <p class="shayari">
-                        "तेरे साथ बिताया हर लम्हा खास है,<br>
-                        तू पास हो तो हर जगह जन्नत का एहसास है।"
-                    </p>
-                </div>
-                <img src="./image2.png" alt="Trip">
-            </div>
+    <header class="hero">
+        <h1>Happy Valentine’s Day 💖</h1>
+        <p>You are my today and all my tomorrows...</p>
+        <img src="four.jpeg" class="main-photo">
+    </header>
 
-            <div class="memory-card">
-                <span class="date">Aaj Aur Hamesha</span>
-                <div class="content">
-                    <p class="shayari">
-                        "बस 6 महीने नहीं, ये तो खूबसूरत शुरुआत है,<br>
-                        अब तो पूरी ज़िन्दगी बस तेरा ही साथ है।"
-                    </p>
-                </div>
-                <img src="./image3.png" alt="Today">
-            </div>
-        </section>
+    <section class="timeline">
+        <h2>Our 7 Beautiful Memories 🌹</h2>
 
-        <div class="surprise-section">
-            <button id="loveBtn" onclick="showLove()">Ek Aakhri Surprise ✨</button>
-            
-            <div id="hiddenMessage" class="hidden">
-                <h2>I Love You! ❤️</h2>
-                <p>Happy Anniversary Meri Lilly!</p>
-            </div>
+        <div class="memory-card reveal">
+            <span class="date">The Beginning 💕</span>
+            <p class="shayari">The day I met you, my world changed forever.</p>
+            <img src="one.jpeg">
         </div>
 
-        <footer>
-            <p>Made with ❤️ for you</p>
-        </footer>
+        <div class="memory-card reveal">
+            <span class="date">Your Smile 😊</span>
+            <p class="shayari">Your smile is my favorite place to live.</p>
+            <img src="two.jpeg">
+        </div>
+
+        <div class="memory-card reveal">
+            <span class="date">Our Selfie 📸</span>
+            <p class="shayari">Every picture with you is my treasure.</p>
+            <img src="three.jpeg">
+        </div>
+
+        <div class="memory-card reveal">
+            <span class="date">Crazy Moments 😜</span>
+            <p class="shayari">Life feels magical when I’m with you.</p>
+            <img src="five.jpeg">
+        </div>
+
+        <div class="memory-card reveal">
+            <span class="date">Your Hug 🤗</span>
+            <p class="shayari">In your arms, I found my home.</p>
+            <img src="six.jpeg">
+        </div>
+
+        <div class="memory-card reveal">
+            <span class="date">Late Night Talks 🌙</span>
+            <p class="shayari">Even silence feels beautiful with you.</p>
+            <img src="nine.jpeg">
+        </div>
+
+        <div class="memory-card reveal">
+            <span class="date">Forever & Always 💍</span>
+            <p class="shayari">This is not just Valentine’s… it’s our forever.</p>
+            <img src="eight.jpeg">
+        </div>
+    </section>
+
+    <div class="surprise-section">
+        <button id="loveBtn" onclick="showLove()">Click For My Promise ❤️</button>
+
+        <div id="hiddenMessage" class="hidden">
+            <h2>You Are My Forever 💖</h2>
+            <p>
+                I promise to love you more every single day.
+                No matter what happens,
+                I will always choose you. ❤️
+            </p>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <footer>
+        <p>Made with ❤️ only for you</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
